@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>form ajax</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+</head>
+
+<body>
+   <form method="post" id="form" action="" >
+      <div class="person clearfix">
+         <input type="txt" placeholder="Name:" required="" name="name">
+         <input type="email" placeholder="Email:" required="" name="email"><br>
+         <input type="txt" placeholder="From:" required="" name="from">
+         <input type="txt" placeholder="To:" required="" name="to"><br>
+         <input type="tel" placeholder="Tel:" required="" name="tel">
+      </div>
+      <div class="date clearfix">
+         <div class="dateElement">
+            Date:<input type="date" id="date" required="" name="date">
+         </div>
+         <div class="dateElement">
+            Time:<input type="time" id="time" required="" name="time">
+         </div>
+      </div>
+      <div class="comfort">
+      Comfort:
+         <select required="" name="comfort">
+            <option value="Economy">Economy</option>
+            <option value="Standard">Standard</option>
+            <option value="Lux">Lux</option>
+         </select>
+      </div>
+      <div class="passengers clearfix">
+         <div class="passengersItem">
+            Adults:  
+            <select required="" name="adults">
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+            </select>
+         </div>
+         <div class="passengersItem">
+            Children:   
+            <select required="" name="child">
+               <option value="0">0</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+            </select>
+         </div>
+      </div>
+      <div class="message">
+         <textarea placeholder="Message:" name="message"></textarea>
+      </div>
+      <input type="button" id="button" value="Click">
+      <input type="reset" value="Reset">      
+   </form><br>
+      <div id="finishElements"></div>
+
+         <!-- sprawdzanie danych w pliku -->
+         <script type="text/javascript">
+            $(document ).ready(function(){
+               $("#button").click(function(){
+                  $( "#result" ).load( "file.txt" );
+               });
+            });
+            
+         </script> 
+         <div id="result"></div> 
+</body>
+</html>
